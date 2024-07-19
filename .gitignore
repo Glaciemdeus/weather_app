@@ -1,0 +1,8 @@
+# project data
+.env
+venv
+__pycache__
+
+  
+# vcs tools
+.vscode

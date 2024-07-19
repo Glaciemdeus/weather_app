@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погода</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .weather {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .form {
+        position: absolute;
+        top: 60%;
+        left: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        padding: 4px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="weather">
+      <h1>Я могу показать погоду в вашем городе</h1>
+    </div>
+    <div class="form">
+      <div class="form-group">
+        <label for="city">Введите ваш город:</label>
+        <input type="text" id="city" name="city" class="form-control" />
+      </div>
+    </div>
+  </body>
+</html>
