@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погода</title>
+    <link rel="stylesheet" type="text/css" href="{% static "main/css/styles.css" %}">
+  </head>
+  <body>
+
+
+
+
+
+    <div class="weather">
+      <h1>Погода</h1>
+      <p>Ваш город, дата.</p>
+      <p>Температура: {{ temperature }}</p>
+      <p>Осадки: нет</p>
+      <p>Ветер: слабый</p>
+    </div>
+
+
+    {% comment %} <div>
+      <a href="{% url "index" %}" class="button" >Назад</a>
+    </div> {% endcomment %}
+
+    <form action="{% url "index" %}" class="form">
+      {% csrf_token %}
+      <div class="form-group">
+        <button type="submit" class="button">Назад</button>
+      </div>
+    </form>
+    
+  </body>
+</html>

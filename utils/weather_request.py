@@ -2,7 +2,7 @@ import openmeteo_requests
 from openmeteo_sdk.Variable import Variable
 import numpy as np
 
-from city_to_coordinates import coordinates_find
+from utils.city_to_coordinates import coordinates_find
 
 
 
@@ -48,11 +48,3 @@ def weather_find(city: str):
     return int(current_temperature_2m.Value())
     
 
-
-
-
-
-
-
-if __name__ == '__main__':
-    print(weather_find('Нижний Новгород'))

@@ -1,3 +1,15 @@
 from django.db import models
 
-# Create your models here.
+
+
+
+
+
+
+class UserRequestModel(models.Model):
+    
+    city = models.CharField(max_length=50)
+    temperature = models.IntegerField()
+    
+    
+    

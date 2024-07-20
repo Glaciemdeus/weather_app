@@ -7,7 +7,8 @@ from main import views
 
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    # path("admin/", admin.site.urls),
     path("", views.index, name="index"),
+    path("weather_info/", views.weather_info, name="weather_info"),
     
 ]
