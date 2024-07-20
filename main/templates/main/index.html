@@ -18,6 +18,8 @@
     </div>
 
 
+
+
     {% comment %} Пост запрос с передачей ввода пользователя {% endcomment %}
     <form action="{% url "weather_info" %}" method="post" class="form">
       {% csrf_token %}
@@ -28,6 +30,9 @@
       </div>
     </form>
 
+
+
+    
 
   </body>
 </html>

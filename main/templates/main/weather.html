@@ -21,14 +21,11 @@
     </div>
 
 
-    {% comment %} <div>
-      <a href="{% url "index" %}" class="button" >Назад</a>
-    </div> {% endcomment %}
 
     <form action="{% url "index" %}" class="form">
       {% csrf_token %}
       <div class="form-group">
-        <button type="submit" class="button">Назад</button>
+        <button type="submit" class="button_back">Назад</button>
       </div>
     </form>
     

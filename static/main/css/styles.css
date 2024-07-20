@@ -38,7 +38,7 @@ body {
 
 .button {
     position: absolute;
-    left: 50%;
+    left: 35%;
     width: 40%;
     margin-top: 1rem;
     padding: 0.5rem;
@@ -47,3 +47,16 @@ body {
     border-color: black;
     background-color: lightblue;
   }
+
+.button_back {
+    position: absolute;
+
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 10px 20px; 
+    border-color: black;
+    background-color: lightblue;
+    background: transparent; 
+    outline: none; 
+  }
+   
