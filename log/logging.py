@@ -1,7 +1,7 @@
 from loguru import logger
 
 
-
+# Для сохранения логов 
 logger.add(
 			"log/data/debug.log",
 			format="{time} {level} {message}",

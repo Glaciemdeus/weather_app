@@ -5,7 +5,7 @@ import datetime
 
 from utils.city_to_coordinates import coordinates_find
 
-
+import log.logging #импорт нужен для записи логов
 from loguru import logger
 
 
@@ -13,7 +13,7 @@ from loguru import logger
 om = openmeteo_requests.Client()
 
 
-
+@logger.catch
 def weather_find(city: str):
     coordinates = coordinates_find(city)
 
@@ -37,13 +37,11 @@ def weather_find(city: str):
     current = response.Current()
 
     
-    
-    
     current_variables = list(map(lambda i: current.Variables(i), range(0, current.VariablesLength())))
     current_temperature_2m = next(filter(lambda x: x.Variable() == Variable.temperature and x.Altitude() == 2, current_variables))
     
     
-    
+    # Дата фиксируется текущая
     date = [str(datetime.date.today().day), str(datetime.date.today().month), str(datetime.date.today().year)]
     
     
