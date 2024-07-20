@@ -1,10 +1,12 @@
 import openmeteo_requests
 from openmeteo_sdk.Variable import Variable
-import numpy as np
+
+import datetime
 
 from utils.city_to_coordinates import coordinates_find
 
 
+from loguru import logger
 
 
 
@@ -19,7 +21,7 @@ def weather_find(city: str):
     params = {
         "latitude": coordinates[0],
         "longitude": coordinates[1],
-        "hourly": ["temperature_2m", "precipitation"],
+        "hourly": "temperature_2m",
         "current": ["temperature_2m"]
     }
 
@@ -33,6 +35,8 @@ def weather_find(city: str):
 
     # Расчёт для текущей температуры
     current = response.Current()
+
+    
     
     
     current_variables = list(map(lambda i: current.Variables(i), range(0, current.VariablesLength())))
@@ -40,11 +44,9 @@ def weather_find(city: str):
     
     
     
-
-
+    date = [str(datetime.date.today().day), str(datetime.date.today().month), str(datetime.date.today().year)]
     
     
     
-    return int(current_temperature_2m.Value())
+    return [int(current_temperature_2m.Value()), ','.join(date)]
     
-
